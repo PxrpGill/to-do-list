@@ -1,0 +1,38 @@
+.root {
+	@mixin responsive padding-block, 15, 20;
+	@mixin responsive padding-inline, 20, 50;
+
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+
+.title,
+.link {
+	@mixin transitionOptions;
+
+	color: var(--primary-text-color);
+	transition-property: color, translate;
+
+	@media (hover: hover) {
+		&:hover {
+			translate: 0% -15%;
+			color: var(--purple-hover);
+		}
+	}
+}
+
+.title {
+	@mixin responsive-typography 16, 18;
+
+	font-weight: 500;
+}
+
+.link {
+	@mixin responsive-typography 14, 16;
+}

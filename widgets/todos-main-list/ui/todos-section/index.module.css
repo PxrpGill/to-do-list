@@ -1,0 +1,7 @@
+.title {
+	@mixin responsive padding-block-end, 30, 50;
+	@mixin responsive-typography 30, 40;
+
+	text-align: center;
+	font-weight: 500;
+}

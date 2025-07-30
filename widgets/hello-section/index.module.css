@@ -1,0 +1,25 @@
+.root {
+	@mixin responsive gap, 20, 30;
+
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.title,
+.description {
+	text-align: center;
+}
+
+.title {
+	@mixin responsive-typography 32, 74;
+	font-weight: 700;
+}
+
+.description {
+	@mixin responsive-typography 18, 24;
+
+	font-weight: 500;
+}

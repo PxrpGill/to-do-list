@@ -1,0 +1,3 @@
+.todosSection {
+	@mixin responsive padding-block-end, 20, 30;
+}

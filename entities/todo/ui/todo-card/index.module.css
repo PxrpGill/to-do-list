@@ -1,0 +1,44 @@
+.root {
+	@mixin transitionOptions;
+	@mixin responsive padding, 15, 15;
+	@mixin responsive border-radius, 15, 15;
+	@mixin responsive gap, 10, 10;
+
+	background-color: var(--secondary-background-color);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	transition-property: background-color, translate;
+	height: 100%;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--purple-accent);
+			translate: 0% -5%;
+		}
+	}
+}
+
+.link {
+	position: absolute;
+	inset: 0;
+}
+
+.label,
+.todoId,
+.userId {
+	@mixin responsive-typography 16, 18;
+}
+
+.title {
+	@mixin responsive-typography 18, 20;
+
+	line-height: 1.7;
+}
+
+.label {
+	@mixin responsive gap, 10, 10;
+
+	display: flex;
+	align-items: center;
+}
