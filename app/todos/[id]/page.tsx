@@ -1,8 +1,13 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { Todo } from '@/views/todo-page';
 import { getSingleTodo } from '@/views/todo-page/api/get-single-todo';
 import { getAllTodos } from '@/widgets/todos-main-list/api/get-all-todos';
+
+export const metadata: Metadata = {
+	title: 'Todo Single Page',
+};
 
 export const revalidate = 10;
 
