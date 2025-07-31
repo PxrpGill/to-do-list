@@ -10,6 +10,7 @@ import css from './index.module.css';
 
 type TodoCardProps = TodoType & {
 	className?: string;
+	withoutLink?: boolean;
 };
 
 export const TodoCard = ({
@@ -18,6 +19,7 @@ export const TodoCard = ({
 	userId,
 	id,
 	completed,
+	withoutLink,
 }: TodoCardProps) => {
 	const {
 		userIDlabel,
@@ -42,7 +44,7 @@ export const TodoCard = ({
 				/>
 				{parser(isCompletedLabel)}
 			</label>
-			<Link className={css.link} href={todoLink + id} />
+			{!withoutLink && <Link className={css.link} href={todoLink + id} />}
 		</WrapperAnimationComponent.Article>
 	);
 };

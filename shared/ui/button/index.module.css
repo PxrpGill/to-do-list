@@ -1,0 +1,8 @@
+.button {
+	@mixin transitionOptions;
+	@mixin responsive border-radius, 5, 7;
+	@mixin responsive padding-inline, 30, 40;
+	@mixin responsive padding-block, 10, 15;
+
+	transition-property: all;
+}

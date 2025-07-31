@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
 import type { TodoType } from '@/shared/types/todo.types';
 import type {
@@ -12,13 +12,21 @@ export const TodosManagerProvider = ({
 	children,
 	initialTodos,
 }: TodosManagerProviderProps) => {
-	const [todos, setTodos] = useState<Array<TodoType> | undefined>(initialTodos);
-    
+	const [originalTodos] = useState<Array<TodoType> | undefined>(initialTodos);
+	const [todos, setTodos] = useState<Array<TodoType> | undefined>(
+		originalTodos
+	);
+
+	const resetTodosChanges = useCallback(() => {
+		setTodos(originalTodos);
+	}, [originalTodos]);
+
 	return (
 		<TodosContext.Provider
 			value={{
 				todos,
 				setTodos,
+				resetTodosChanges,
 			}}
 		>
 			{children}

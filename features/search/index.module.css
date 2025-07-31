@@ -1,0 +1,65 @@
+.root {
+	@mixin responsive gap, 10, 15;
+	@mixin responsive padding-block-start, 20, 30;
+	@mixin responsive padding-block-end, 80, 130;
+}
+
+.root,
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form {
+	@mixin responsive gap, 20, 25;
+}
+
+.buttonPanel {
+	@mixin responsive gap, 10, 15;
+
+	display: flex;
+	align-items: center;
+}
+
+.title {
+	@mixin responsive-typography 20, 28;
+
+	font-weight: 500;
+}
+
+.button {
+	@mixin responsive-typography 14, 16;
+
+	background-color: var(--secondary-background-color);
+
+	@media (hover: hover) {
+		&:hover {
+			translate: 0 -10%;
+		}
+
+		&[type='submit']:hover {
+			background-color: var(--green-accent);
+		}
+
+		&[type='reset']:hover {
+			background-color: var(--red-accent);
+		}
+	}
+}
+
+.input {
+	@mixin transition border-color;
+	@mixin responsive-typography 16, 40;
+	@mixin responsive padding-inline, 15, 15;
+
+	line-height: 2;
+	text-align: center;
+
+	border-bottom: 1px solid var(--secondary-background-color);
+	min-width: 85%;
+
+	&:focus-visible {
+		border-color: var(--purple-accent);
+	}
+}

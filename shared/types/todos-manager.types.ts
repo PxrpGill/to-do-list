@@ -5,6 +5,7 @@ import type { TodoType } from './todo.types';
 export type TodosManagerProps = {
 	todos?: Array<TodoType>;
 	setTodos: Dispatch<SetStateAction<Array<TodoType> | undefined>>;
+	resetTodosChanges: () => void;
 };
 
 export type TodosManagerProviderProps = PropsWithChildren & {
