@@ -2,7 +2,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import Link from 'next/link';
 
-import { TODO_CONSTANTS } from '@/entities/todo/ui/models/todo.constants';
+import { TODO_CONSTANTS } from '@/entities/todo/models/todo.constants';
 import type { TodoType } from '@/shared/types/todo.types';
 import WrapperAnimationComponent from '@/shared/ui/wrapper-animation';
 
