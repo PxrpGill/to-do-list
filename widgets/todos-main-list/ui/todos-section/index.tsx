@@ -3,7 +3,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
-import type { TodoType } from '@/shared/types/todo.types';
+import { useTodosManager } from '@/shared/models/todos-manager';
 import WrapperAnimationComponent from '@/shared/ui/wrapper-animation';
 import { TODOS_SECTION_TITLE } from '@/widgets/todos-main-list/models/todos-main-list.constants';
 import { TodosList } from '@/widgets/todos-main-list/ui/todos-list';
@@ -11,11 +11,12 @@ import { TodosList } from '@/widgets/todos-main-list/ui/todos-list';
 import css from './index.module.css';
 
 type TodosSectionProps = {
-	todos?: Array<TodoType>;
 	className?: string;
 };
 
-export const TodosSection = ({ todos, className }: TodosSectionProps) => {
+export const TodosSection = ({ className }: TodosSectionProps) => {
+	const { todos } = useTodosManager();
+
 	if (!todos?.length) return null;
 
 	return (

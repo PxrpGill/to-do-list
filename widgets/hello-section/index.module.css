@@ -1,5 +1,6 @@
 .root {
 	@mixin responsive gap, 20, 30;
+	@mixin responsive margin-block-end, 40, 50;
 
 	min-height: 100vh;
 	display: flex;

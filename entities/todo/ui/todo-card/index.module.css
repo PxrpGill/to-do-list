@@ -42,3 +42,8 @@
 	display: flex;
 	align-items: center;
 }
+
+.checkbox {
+	@mixin responsive width, 14, 14;
+	@mixin responsive height, 14, 14;
+}
