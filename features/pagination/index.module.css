@@ -1,0 +1,36 @@
+.buttonBlock,
+.root {
+	@mixin responsive gap, 10, 10;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button[class] {
+	@mixin responsive-typography 14, 16;
+	@mixin responsive padding-inline, 25;
+
+	background-color: var(--secondary-background-color);
+	font-weight: 700;
+
+	@media (hover: hover) {
+		&:not(:disabled):hover {
+			translate: 0% -10%;
+			background-color: var(--green-accent);
+		}
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+.label {
+	@mixin responsive-typography 14, 14;
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}

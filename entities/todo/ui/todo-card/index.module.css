@@ -41,4 +41,10 @@
 
 	display: flex;
 	align-items: center;
+	margin-block-start: auto;
+}
+
+.checkbox {
+	@mixin responsive width, 14, 14;
+	@mixin responsive height, 14, 14;
 }

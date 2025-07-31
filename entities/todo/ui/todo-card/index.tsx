@@ -10,6 +10,7 @@ import css from './index.module.css';
 
 type TodoCardProps = TodoType & {
 	className?: string;
+	withoutLink?: boolean;
 };
 
 export const TodoCard = ({
@@ -18,6 +19,7 @@ export const TodoCard = ({
 	userId,
 	id,
 	completed,
+	withoutLink,
 }: TodoCardProps) => {
 	const {
 		userIDlabel,
@@ -33,10 +35,16 @@ export const TodoCard = ({
 			<p className={css.userId}>{parser(userIDlabel + userId)}</p>
 			<h3 className={css.title}>{parser(todoLabelDescription + title)}</h3>
 			<label htmlFor="checkbox" className={css.label}>
-				<input id="checkbox" type="checkbox" readOnly checked={completed} />
+				<input
+					id="checkbox"
+					type="checkbox"
+					readOnly
+					checked={completed}
+					className={css.checkbox}
+				/>
 				{parser(isCompletedLabel)}
 			</label>
-			<Link className={css.link} href={todoLink + id} />
+			{!withoutLink && <Link className={css.link} href={todoLink + id} />}
 		</WrapperAnimationComponent.Article>
 	);
 };

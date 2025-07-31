@@ -1,0 +1,43 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.title {
+	@mixin responsive-typography 32, 74;
+	@mixin responsive padding-block-end, 30, 40;
+
+	text-align: center;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.creator {
+	@mixin responsive-typography 20, 32;
+	@mixin responsive padding-block-end, 15, 15;
+
+	line-height: 1.6;
+}
+
+.description {
+	@mixin responsive-typography 20, 24;
+	@mixin responsive padding-block-end, 15, 15;
+
+	span {
+		font-weight: 700;
+	}
+
+	line-height: 1.6;
+}
+
+.completed {
+	@mixin responsive-typography 16, 18;
+
+	color: var(--red-accent);
+
+	&.isCompleted {
+		color: var(--green-accent);
+	}
+}

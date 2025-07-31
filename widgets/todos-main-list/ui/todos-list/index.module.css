@@ -1,4 +1,4 @@
-.root {
+.list {
 	@mixin responsive gap, 15, 20;
 
 	display: grid;
@@ -8,4 +8,18 @@
 		display: flex;
 		flex-direction: column;
 	}
+}
+
+.paragraph {
+	@mixin responsive min-height, 200, 250;
+
+	position: relative;
+
+	@media (max-width: 767px) {
+		min-height: unset;
+	}
+}
+
+.pagination {
+	@mixin responsive padding-block, 40, 50;
 }
