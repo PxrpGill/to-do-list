@@ -26,7 +26,7 @@ export const Pagination = ({
 	return (
 		<div className={cx(css.root, className)}>
 			<div className={css.buttonBlock}>
-				<span className={css.label}>{currentPageNumber + 1}</span>
+				<span className={css.label}>{1}</span>
 				<Button
 					className={css.button}
 					disabled={currentPageNumber === 0}
@@ -38,7 +38,7 @@ export const Pagination = ({
 			<div className={css.buttonBlock}>
 				<Button
 					className={css.button}
-					disabled={currentPageNumber === lastPageNumber}
+					disabled={currentPageNumber === (lastPageNumber ?? 1) - 1}
 					onClick={handleNextPage}
 				>
 					{parser(nextButton)}

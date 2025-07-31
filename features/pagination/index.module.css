@@ -13,9 +13,14 @@
 	background-color: var(--secondary-background-color);
 
 	@media (hover: hover) {
-		&:hover {
+		&:not(:disabled):hover {
 			background-color: var(--green-accent);
 		}
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 }
 
