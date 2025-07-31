@@ -25,6 +25,7 @@ export const Search = () => {
 				onReset={resetTodosChanges}
 			>
 				<input
+					autoComplete="off"
 					name="search"
 					type="text"
 					className={css.input}

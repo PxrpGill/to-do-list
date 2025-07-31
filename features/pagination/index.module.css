@@ -1,0 +1,28 @@
+.buttonBlock,
+.root {
+	@mixin responsive gap, 10, 10;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button {
+	@mixin responsive-typography 14, 16;
+
+	background-color: var(--secondary-background-color);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--green-accent);
+		}
+	}
+}
+
+.label {
+	@mixin responsive-typography 14, 14;
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}

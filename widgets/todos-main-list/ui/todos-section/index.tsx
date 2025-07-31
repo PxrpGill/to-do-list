@@ -18,6 +18,7 @@ type TodosSectionProps = {
 
 export const TodosSection = ({ className }: TodosSectionProps) => {
 	const { todos } = useTodosManager();
+	const isTodosLength = todos && todos.length > 0;
 
 	return (
 		<section className={cx(css.root, className, 'container')}>
@@ -25,7 +26,7 @@ export const TodosSection = ({ className }: TodosSectionProps) => {
 				{parser(TODOS_SECTION_TITLE)}
 			</WrapperAnimationComponent.H4>
 			<Search />
-			{todos && todos.length > 0 ? <TodosList todos={todos} /> : <EmptyTodos />}
+			{isTodosLength ? <TodosList todos={todos} /> : <EmptyTodos />}
 		</section>
 	);
 };

@@ -9,6 +9,7 @@ type ButtonProps = PropsWithChildren & {
 	href?: string;
 	onClick?: () => void;
 	className?: string;
+	disabled?: boolean;
 };
 
 export const Button = ({
@@ -17,6 +18,7 @@ export const Button = ({
 	href,
 	onClick,
 	className,
+	disabled,
 }: ButtonProps) => {
 	if (href) {
 		return (
@@ -27,7 +29,12 @@ export const Button = ({
 	}
 
 	return (
-		<button type={type} className={cx(css.button, className)} onClick={onClick}>
+		<button
+			disabled={disabled}
+			type={type}
+			className={cx(css.button, className)}
+			onClick={onClick}
+		>
 			{children}
 		</button>
 	);
