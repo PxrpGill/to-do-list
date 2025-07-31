@@ -2,8 +2,8 @@
 
 import { TodoCard } from '@/entities/todo/ui/todo-card';
 import { Pagination } from '@/features/pagination';
+import { usePagination } from '@/features/pagination/hooks/use-pagination';
 import type { TodoType } from '@/shared/types/todo.types';
-import { usePagination } from '@/widgets/todos-main-list/hooks/use-pagination';
 
 import css from './index.module.css';
 
