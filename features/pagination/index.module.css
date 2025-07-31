@@ -7,10 +7,12 @@
 	align-items: center;
 }
 
-.button {
+.button[class] {
 	@mixin responsive-typography 14, 16;
+	@mixin responsive padding-inline, 25;
 
 	background-color: var(--secondary-background-color);
+	font-weight: 700;
 
 	@media (hover: hover) {
 		&:not(:disabled):hover {
